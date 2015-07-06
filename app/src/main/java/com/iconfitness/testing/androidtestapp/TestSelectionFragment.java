@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class TestSelectionFragment extends Fragment {
 
-    public MainActivityFragment() {
+    public TestSelectionFragment() {
     }
 
     @Override
