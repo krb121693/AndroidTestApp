@@ -9,17 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
-
+    RelativeLayout motorTestButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        motorTestButton = (RelativeLayout) findViewById(R.id.motorTestLayout);
+        motorTestButton.setOnClickListener(selectApplication);
     }
 
     @Override
@@ -42,6 +47,17 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    View.OnClickListener selectApplication = new View.OnClickListener(){
+        public void onClick(View v) {
+            MessageBox("Button has been clicked");
+        }
+    };
+
+    public void MessageBox(String message) {
+        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 }

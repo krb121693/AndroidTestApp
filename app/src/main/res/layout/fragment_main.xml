@@ -7,7 +7,9 @@
 
     <RelativeLayout
         android:layout_width="100dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/motorTestLayout">
 
         <RelativeLayout
             android:id="@+id/gridview"
@@ -23,12 +25,12 @@
         <RelativeLayout
             android:id="@+id/footer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/gridview"
             android:gravity="center_horizontal">
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
                 android:text="Motor Test"
                 android:textColor="#000000"
                 android:textAlignment="center"/>
