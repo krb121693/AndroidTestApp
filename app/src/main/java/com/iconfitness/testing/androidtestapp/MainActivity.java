@@ -1,6 +1,7 @@
 package com.iconfitness.testing.androidtestapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -51,7 +52,9 @@ public class MainActivity extends ActionBarActivity {
 
     View.OnClickListener selectApplication = new View.OnClickListener(){
         public void onClick(View v) {
-            MessageBox("Button has been clicked");
+            MessageBox("Motor Test");
+            Intent intent = new Intent(MainActivity.this, Motor_Test_Screen.class);
+            startActivity(intent);
         }
     };
 
