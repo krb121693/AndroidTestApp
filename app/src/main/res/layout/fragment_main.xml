@@ -9,7 +9,11 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:id="@+id/motorTestLayout">
+        android:id="@+id/motorTestLayout"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
 
         <RelativeLayout
             android:id="@+id/gridview"
@@ -36,16 +40,41 @@
                 android:textAlignment="center"/>
         </RelativeLayout>
     </RelativeLayout>
-    <!--
-    <GridView
-        android:id="@+id/test_selector_gridview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="90dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"/>
-    -->
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/bleTestLayout"
+        android:layout_toRightOf="@+id/motorTestLayout"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:id="@+id/gridview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/blutooth_icon"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/footer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gridview1"
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BLE Test"
+                android:textColor="#000000"
+                android:textAlignment="center"/>
+        </RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

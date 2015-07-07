@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.iconfitness.testing.androidtestapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".BLE_Test_Screen"
+            android:label="@string/title_activity_ble__test__screen"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.iconfitness.testing.androidtestapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

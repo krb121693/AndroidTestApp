@@ -6,19 +6,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Motor_Test_Screen extends ActionBarActivity {
+public class BLE_Test_Screen extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_motor__test__screen);
+        setContentView(R.layout.activity_ble__test__screen);
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_motor__test__screen, menu);
-        setTitle("Motor Test");
+        getMenuInflater().inflate(R.menu.menu_ble__test__screen, menu);
+        setTitle("BLE Test");
         return true;
     }
 

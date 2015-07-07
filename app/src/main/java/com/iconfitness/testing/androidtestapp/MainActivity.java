@@ -19,19 +19,24 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
     RelativeLayout motorTestButton;
+    RelativeLayout bleTestButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         motorTestButton = (RelativeLayout) findViewById(R.id.motorTestLayout);
-        motorTestButton.setOnClickListener(selectApplication);
+        motorTestButton.setOnClickListener(selectMotorTest);
+
+        bleTestButton = (RelativeLayout) findViewById(R.id.bleTestLayout);
+        bleTestButton.setOnClickListener(selectBLETest);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        setTitle("Test Applications");
         return true;
     }
 
@@ -50,10 +55,19 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    View.OnClickListener selectApplication = new View.OnClickListener(){
+    View.OnClickListener selectMotorTest = new View.OnClickListener(){
         public void onClick(View v) {
             MessageBox("Motor Test");
             Intent intent = new Intent(MainActivity.this, Motor_Test_Screen.class);
+            startActivity(intent);
+        }
+    };
+
+    View.OnClickListener selectBLETest = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            MessageBox("BLE Test");
+            Intent intent = new Intent(MainActivity.this, BLE_Test_Screen.class);
             startActivity(intent);
         }
     };
