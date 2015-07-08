@@ -1,6 +1,7 @@
 package com.iconfitness.testing.androidtestapp;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +10,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 
 public class BLE_Test_Screen extends ActionBarActivity {
@@ -22,9 +31,10 @@ public class BLE_Test_Screen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ble__test__screen);
 
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         try {
-            BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
             if (mBluetoothAdapter == null) {
                 // Device does support Bluetooth
                 ErrorMessageBox("Your Device does not support Bluetooth");
@@ -35,9 +45,6 @@ public class BLE_Test_Screen extends ActionBarActivity {
         } catch (Exception e) {
             MessageBox(String.valueOf(e));
         }
-        
-
-
     }
 
     @Override
