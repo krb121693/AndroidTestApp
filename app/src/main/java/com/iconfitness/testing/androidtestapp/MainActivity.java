@@ -1,5 +1,6 @@
 package com.iconfitness.testing.androidtestapp;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+
     RelativeLayout motorTestButton;
     RelativeLayout bleTestButton;
     @Override
