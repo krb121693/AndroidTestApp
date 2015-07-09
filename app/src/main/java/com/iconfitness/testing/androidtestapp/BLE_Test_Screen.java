@@ -24,14 +24,13 @@ import java.util.Set;
 public class BLE_Test_Screen extends ActionBarActivity {
 
     private final static int REQUEST_ENABLE_BT = 1;
+    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ble__test__screen);
-
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         try {
 
@@ -41,9 +40,23 @@ public class BLE_Test_Screen extends ActionBarActivity {
             } else if (!mBluetoothAdapter.isEnabled()) {
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+            } else { // Adapter is enabled
+                //if(mBluetoothAdapter.isDiscovering()){
+                //   mBluetoothAdapter.cancelDiscovery();
+                //}
+
+                //mBluetoothAdapter.startDiscovery();
             }
         } catch (Exception e) {
             MessageBox(String.valueOf(e));
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mBluetoothAdapter != null) {
+            mBluetoothAdapter.cancelDiscovery();
         }
     }
 
